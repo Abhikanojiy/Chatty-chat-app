@@ -88,7 +88,7 @@ const PicModal = ({ user, setUser, children }) => {
       };
 
       const data = await axios.put(
-        `http://localhost:5000/api/user/updatePic`,
+        `/api/user/updatePic`,
         {
           email: user.email,
           pic: pic,
