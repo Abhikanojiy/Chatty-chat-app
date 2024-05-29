@@ -47,7 +47,7 @@ const Login = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/user/login",
+        "https://chatty-chat-app-backend.onrender.com/api/user/login",
         {
           email,
           password,

@@ -79,7 +79,7 @@ function SideDrawer() {
       };
 
       const { data } = await axios.get(
-        `/api/user?search=${search}`,
+        `https://chatty-chat-app-backend.onrender.com/api/user?search=${search}`,
         config
       );
 
@@ -110,7 +110,7 @@ function SideDrawer() {
         },
       };
       const { data } = await axios.post(
-        `/api/chat`,
+        `https://chatty-chat-app-backend.onrender.com/api/chat`,
         { userId },
         config
       );

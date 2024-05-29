@@ -28,7 +28,7 @@ const MyChats = ({ fetchAgain }) => {
       };
 
       const { data } = await axios.get(
-        "/api/chat",
+        "https://chatty-chat-app-backend.onrender.com/api/chat",
         config
       );
       setChats(data);

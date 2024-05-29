@@ -16,7 +16,7 @@ import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "./Context/ChatProvider";
 
-const ENDPOINT = ""; // "https://amigos.herokuapp.com"; -> After deployment
+const ENDPOINT = "https://chatty-chat-app-backend.onrender.com"; // "https://amigos.herokuapp.com"; -> After deployment
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -48,7 +48,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `/api/message/${selectedChat._id}`,
+        `https://chatty-chat-app-backend.onrender.com/api/message/${selectedChat._id}`,
         config
       );
       // console.log(data);
@@ -88,7 +88,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "/api/message",
+          "https://chatty-chat-app-backend.onrender.com/api/message",
           {
             content: newMess,
             chatId: selectedChat._id,

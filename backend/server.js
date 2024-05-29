@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
-// const { notFound, errorHandler }=require("./middlewares/errorMiddleware");
+const { notFound, errorHandler }=require("./middlewares/errorMiddleware");
 
 const bodyParser = require("body-parser")
 const cors=require('cors')
@@ -21,7 +21,10 @@ mongoose.connect(process.env.DB_URL, {
 })
 
 app.use(express.json()); // to accept json data
-app.use(cors());
+app.use(cors({
+  origin: "*",
+  credentials: true
+}))
 // app.get("/", (req, res) => {
 //   res.send("API Running!");
 // });
@@ -57,8 +60,8 @@ const path = require("path");
 
 
 
-// app.use(notFound);
-// app.use(errorHandler);
+app.use(notFound);
+app.use(errorHandler);
 
 const port= process.env.PORT || 5000
 const server=app.listen(port,()=>{

@@ -88,7 +88,7 @@ const PicModal = ({ user, setUser, children }) => {
       };
 
       const data = await axios.put(
-        `/api/user/updatePic`,
+        `https://chatty-chat-app-backend.onrender.com/api/user/updatePic`,
         {
           email: user.email,
           pic: pic,
